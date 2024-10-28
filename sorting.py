@@ -14,14 +14,20 @@ def bubble_sort(arr):
 
 # Insertion Sort
 def insertion_sort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and arr[j] > key:
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key
-    return arr
+    sorted_array = []  # Start with an empty array to build the sorted result
+
+    for num in arr:
+        # Find the correct position in sorted_array for the current number
+        inserted = False
+        for i in range(len(sorted_array)):
+            if num < sorted_array[i]:
+                sorted_array.insert(i, num)  # Insert num at the correct position
+                inserted = True
+                break
+        if not inserted:
+            sorted_array.append(num)  # Append at the end if num is the largest so far
+
+    return sorted_array
 
 
 # Selection Sort
