@@ -7,12 +7,6 @@ def linear_search(input, target):
             return index  # Return the index of the target
     return -1  # Return -1 if the target is not found
 
-# Example usage
-unsorted_list = [92, 53, 14, 79, 21, 67, 38, 25, 84, 43,
-                  56, 97, 12, 45, 18, 61, 34, 73, 29, 100,
-                  27, 65, 88, 19, 31, 52, 85, 46, 37, 93,
-                  78, 22, 40, 64, 13, 55, 71, 39, 90, 49,
-                  62, 28, 86, 32, 17, 94, 26, 58, 80, 47]
 
 def binary_search(input, target):
     leftBound, rightBound = 0, len(input) - 1
