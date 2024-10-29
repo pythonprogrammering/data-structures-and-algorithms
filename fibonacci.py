@@ -2,7 +2,7 @@ import time
 from functools import lru_cache
 
 
-# 1. Iterative Approach with List (O(n) time complexity)
+# 1. Iterative Approach with List
 def fibonacci_iterative_with_list(n):
     if n <= 1:
         return n
@@ -12,14 +12,14 @@ def fibonacci_iterative_with_list(n):
     return fib_sequence[n]  # Return the nth Fibonacci number
 
 
-# 2. Recursive Approach (O(2^n) time complexity)
+# 2. Recursive Approach
 def fibonacci_recursive(n):
     if n <= 1:
         return n
     return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
 
-# 3. Recursive with Caching using lru_cache (O(n) time complexity)
+# 3. Recursive with Caching using lru_cache
 @lru_cache(maxsize=None)
 def fibonacci_recursive_cached(n):
     if n <= 1:

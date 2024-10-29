@@ -9,15 +9,15 @@ def two_sum_brute_force(nums, target):
 
 
 # 2. Dictionary approach
-# This approach uses a hash map (dictionary) to store each number and its index for faster lookups.
+# This approach uses a dictionary to store each number and its index for faster lookups.
 # We only really need to know if the complement exists.
-def two_sum_hash_map(nums, target):
-    num_to_index = {}
+def two_sum_dictionary(nums, target):
+    seen_numbers = {}
     for i, num in enumerate(nums):
         complement = target - num
-        if complement in num_to_index:
-            return [num_to_index[complement], i]
-        num_to_index[num] = i
+        if complement in seen_numbers:
+            return [seen_numbers[complement], i]
+        seen_numbers[num] = i
     return None  # Return None if no solution found
 
 
@@ -26,4 +26,4 @@ nums = [2, 7, 11, 15]
 target = 9
 
 print("Brute Force Result:", two_sum_brute_force(nums, target))  # Output: [0, 1]
-print("Hash Map Result:", two_sum_hash_map(nums, target))  # Output: [0, 1]
+print("Hash Map Result:", two_sum_dictionary(nums, target))  # Output: [0, 1]
